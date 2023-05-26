@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            min-height: 100px;
+            min-width: 100px;
+            padding: 20px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="grandParent">
+        <div id="parent">
+            <div id="child"></div>
+        </div>
+    </div>
+
+    <script>
+/*
+Bubbling: Bottom-up approach
+UseCapture: Top-down approach
+Capturing will be given priority when it is set to true
+*/
+        let grandParentDiv = document.getElementById('grandParent')
+
+        grandParentDiv.addEventListener('click', function () {
+            console.log('Grand Parent has been clicked')
+        }, false) // bubbling
+
+        let parentDiv = document.getElementById('parent')
+
+        parentDiv.addEventListener('click', function () {
+            console.log('Parent has been clicked')
+        }, false) // bubbling
+
+        let childDiv = document.getElementById('child')
+
+        childDiv.addEventListener('click', function (e) {
+            console.log('Child has been clicked')
+            e.stopPropagation() // stops propagation
+        }, true) // capturing
+    </script>
+</body>
+
+</html>
