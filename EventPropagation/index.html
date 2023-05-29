@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="categories">
+        <li id="headphones">Headphones</li>
+        <li id="mobile">Mobile</li>
+        <li id="laptop">Laptop</li>
+        <li id="watch">Watches</li>
+    </div>
+
+    <script>
+        let categories = document.getElementById('categories')
+        let mobile = document.getElementById('mobile')
+        let headphones = document.getElementById('headphones')
+
+        // mobile.addEventListener('click', function(){
+        //     console.log('Mobile has been clicked')
+        // })
+
+        categories.addEventListener('click', function(e){
+           console.log('This category has been clicked ->'+ e.target.id)
+           //window.location.href = '/' + e.target.id
+
+        })
+
+
+    </script>
+</body>
+</html>
